@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD
 
 on:
   push:
@@ -31,13 +31,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Checkout repository
-       uses: actions/checkout@v4
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-     - name: Run golangci-lint
-       uses: golangci/golangci-lint-action@v6
-       with: 
-         version: v1.56.2
+    - name: Run golangci-lint
+      uses: golangci/golangci-lint-action@v6
+      with:
+        version: v1.56.2
+
 
   push:
     runs-on: ubuntu-latest
